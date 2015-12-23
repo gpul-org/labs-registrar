@@ -39,6 +39,14 @@
         <div class="container">
             <div class="content">
                 <div class="title">Laravel 5</div>
+                <nav>
+                    @if(Auth::user())
+                        You are logged in. <a href="{{ action("AuthController@logout") }}">Logout</a>
+                        You are {{ Auth::user()  }}
+                    @else
+                    <a href="{{ action("AuthController@login") }}">Login with GitHub</a>
+                    @endif
+                </nav>
             </div>
         </div>
     </body>
