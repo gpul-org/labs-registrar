@@ -40,5 +40,11 @@
             @endif
     </dl>
 
+    @if (!$tier)
+        <p>{{ _("You are not yet enrolled.") }}</p>
+        <a href="{{ action("PaymentController@welcome") }}">
+            {{ _("Register now!") }}
+        </a>
+    @endif
 
 @endsection
