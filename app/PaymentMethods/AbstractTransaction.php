@@ -34,7 +34,8 @@ abstract class AbstractTransaction
      */
     abstract public function getPaymentMethod();
 
-    public function getName() {
+    public function getName()
+    {
         return $this->getPaymentMethod()->getName();
     }
 
@@ -84,6 +85,21 @@ abstract class AbstractTransaction
     public function getExtra()
     {
         return $this->extra;
+    }
+
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        return [
+            "txId" => $this->getTxId(),
+            "status" => $this->getStatus(),
+            "buyer_id" => $this->getBuyerId(),
+            "money" => $this->getMoney(),
+            "product" => $this->getProduct(),
+            "extra" => $this->getExtra(),
+        ];
     }
 
 }

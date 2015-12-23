@@ -10,8 +10,7 @@
 
     @if ($lastTxMsg)
     <div class="alert alert-success">
-        {{ $lastTxMsg }}
-        <p>{{ sprintf(_("You have just paid %1s € to get the %2s tier (transaction id: %3s)"), $lastTxMsg->getMoney(), $lastTxMsg->getProduct(), $lastTxMsg->getTxId()) }}</p>
+        <p>{{ sprintf(_("You have just paid %1s € to get the %2s tier (transaction id: %3s)"), $lastTxMsg['money'], $lastTxMsg['product'], $lastTxMsg['txId']) }}</p>
     </div>
     @endif
 

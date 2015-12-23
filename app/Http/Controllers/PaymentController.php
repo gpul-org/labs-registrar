@@ -2,17 +2,24 @@
 
 
 use Auth;
+use Registration\AlertMsg;
 use Registration\PaymentMethods\AbstractTransaction;
 use Registration\PaymentMethods\PaypalMethod;
 use Registration\PaymentMethods\TransactionResultListener;
 use Registration\TierDescriptor;
 use Registration\Repositories\TransactionRepository;
 use Request;
+use Session;
 
 class PaymentController extends Controller implements TransactionResultListener
 {
-    public function welcome(TierDescriptor $descriptor) {
+    public function welcome(TierDescriptor $descriptor, TransactionRepository $transactions)
+    {
+        $tier = $transactions->getUserTier(Auth::user());
 
+        if ($tier != 'free') {
+            Session::now("heading_msgs", array_merge(Session::get("heading_msgs", []), [new AlertMsg("alert-warning", sprintf(_("You have already registered for the <strong>%s</strong> tier."), $tier))]));
+        }
 
         return view('payment.storefront', [
             'tiers' => $descriptor->getTiers(),
@@ -20,14 +27,23 @@ class PaymentController extends Controller implements TransactionResultListener
         ]);
     }
 
-    public function tierSelect($tier, TierDescriptor $descriptor) {
+    public function logs(TransactionRepository $transactions)
+    {
+        return view('payment.logs', [
+            'transactions' => $transactions->getUserTransactions(Auth::user())
+        ]);
+    }
+
+    public function tierSelect($tier, TierDescriptor $descriptor)
+    {
         return view('payment.confirm_prepay', [
             'tier' => $descriptor->getTier($tier),
             'tierName' => $tier,
         ]);
     }
 
-    public function selectPayment($tier, TierDescriptor $descriptor, PaypalMethod $paypal) {
+    public function selectPayment($tier, TierDescriptor $descriptor, PaypalMethod $paypal)
+    {
         return view('payment.options', [
             'tierName' => $tier,
             'tier' => $descriptor->getTier($tier),
@@ -36,7 +52,8 @@ class PaymentController extends Controller implements TransactionResultListener
         ]);
     }
 
-    public function confirmFree() {
+    public function confirmFree()
+    {
         return "TBD";
     }
 
@@ -48,7 +65,8 @@ class PaymentController extends Controller implements TransactionResultListener
      * @return
      * @throws Exception
      */
-    public function merchantCallback($merchant, TierDescriptor $tiers, PaypalMethod $paypal, TransactionRepository $transactions) {
+    public function merchantCallback($merchant, TierDescriptor $tiers, PaypalMethod $paypal, TransactionRepository $transactions)
+    {
         if ($merchant == "paypal") {
             return $paypal->finalizeTransaction($tiers, $transactions, $this);
         } else {
@@ -56,7 +74,8 @@ class PaymentController extends Controller implements TransactionResultListener
         }
     }
 
-    public function confirmTier(TransactionRepository $transactions) {
+    public function confirmTier(TransactionRepository $transactions)
+    {
 
         $tier = $transactions->getUserTier(Auth::user());
         $tier = $tier ? $tier : 'free';
@@ -77,7 +96,7 @@ class PaymentController extends Controller implements TransactionResultListener
 
     public function transactionOk(AbstractTransaction $tx)
     {
-        Request::session()->flash("lastPayment", $tx);
+        Request::session()->flash("lastPayment", $tx->toArray());
         return redirect(action('PaymentController@confirmTier'));
     }
 }

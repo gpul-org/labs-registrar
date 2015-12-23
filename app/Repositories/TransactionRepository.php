@@ -1,7 +1,6 @@
 <?php namespace Registration\Repositories;
 
 
-use Auth;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Registration\PaymentMethods\AbstractTransaction;
 use Registration\Transaction;
@@ -19,6 +18,11 @@ class TransactionRepository
             "product" => $transaction->getProduct(),
             "extra" => $transaction->getExtra(),
         ]);
+    }
+
+    public function getUserTransactions(Authenticatable $user)
+    {
+        return Transaction::where('buyer_id', $user->getAuthIdentifier())->get();
     }
 
     public function getUserTier(Authenticatable $user)

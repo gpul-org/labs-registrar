@@ -1,5 +1,5 @@
 <?php
-namespace Registration;
+namespace Registration\Listeners;
 
 interface AuthenticateUserListener
 {

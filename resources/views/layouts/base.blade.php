@@ -44,6 +44,13 @@
         </div>
     </nav>
     <div id="content">
+        @if(Session::has('heading_msgs'))
+            @foreach(Session::get('heading_msgs') as $msg)
+                <div class="alert {{ $msg->getClassName() }}">
+                    {!!  $msg->getText() !!}
+                </div>
+            @endforeach
+        @endif
         @yield('content')
     </div>
 </div>

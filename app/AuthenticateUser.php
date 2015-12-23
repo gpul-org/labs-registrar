@@ -4,6 +4,7 @@
 use Illuminate\Contracts\Auth\Guard;
 use Laravel\Socialite\Contracts\Factory as Socialite;
 use Laravel\Socialite\Two\GithubProvider;
+use Registration\Listeners\AuthenticateUserListener;
 use Registration\Repositories\UserRepository;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
