@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Registration\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
@@ -17,8 +17,7 @@ class Authenticate
     /**
      * Create a new middleware instance.
      *
-     * @param  Guard  $auth
-     * @return void
+     * @param  Guard $auth
      */
     public function __construct(Guard $auth)
     {
