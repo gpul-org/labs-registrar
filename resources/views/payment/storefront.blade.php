@@ -2,22 +2,26 @@
 @section('title', _('Register now'))
 
 @section('content')
-        @foreach($tiers as $k => $tier)
-<div class="col-sm-4">            <div class="container-fluid well">
+    @foreach($tiers as $k => $tier)
+        <div class="col-sm-4">
+            <div class="container-fluid well">
                 <div class="text-center">
                     <h2>{{ $tier->name }}</h2>
-                    <div class="text-left">
-                        <ul style="height: 15em" class="list-unstyled">
+                    <div class="text-left" style="height: 15em">
+                        <ul class="list-unstyled">
                             @foreach($tier->advantages as $advantage)
                                 <li>{{ $advantage }}</li>
                             @endforeach
+                        </ul>
 
-                            @if($tier->requirements)
+                        @if($tier->requirements)
+                            <h4>But you need to:</h4>
+                            <ul class="list-unstyled">
                                 @foreach($tier->requirements as $requirement)
                                     <li>{{ $requirement }}</li>
                                 @endforeach
-                            @endif
-                        </ul>
+                            </ul>
+                        @endif
                     </div>
                     <div class="text-center">
                         <a href="{{ action("PaymentController@tierSelect", $k) }}"
@@ -27,6 +31,6 @@
                     </div>
                 </div>
             </div>
-</div>        @endforeach
+        </div>        @endforeach
 
 @endsection

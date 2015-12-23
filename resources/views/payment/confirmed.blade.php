@@ -10,9 +10,10 @@
 
     @if ($lastTxMsg)
     <div class="alert alert-success">
+        {{ $lastTxMsg }}
         <p>{{ sprintf(_("You have just paid %1s € to get the %2s tier (transaction id: %3s)"), $lastTxMsg->getMoney(), $lastTxMsg->getProduct(), $lastTxMsg->getTxId()) }}</p>
     </div>
     @endif
 
-    <p><a href="{{ action("UserController@profile") }}">{{ _("Return to your profile") }}</p>
+    <p><a href="{{ action("UserController@profile") }}">{{ _("Return to your profile") }}</a></p>
 @endsection

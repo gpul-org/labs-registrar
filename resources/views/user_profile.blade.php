@@ -8,19 +8,13 @@
             {{ _("User") }}
         </dt>
         <dd>
-            {{ $user->username }}
+            <a rel="nofollow" href="https://github.com/{{ $user->username }}">{{ $user->username }}</a>
         </dd>
         <dt>
-            {{ _("First name") }}
+            {{ _("Full name") }}
         </dt>
         <dd>
-            {{ $user->firstName }}
-        </dd>
-        <dt>
-            {{ _("Last name") }}
-        </dt>
-        <dd>
-            {{ $user->lastName }}
+            {{ $user->full_name }}
         </dd>
         <dt>
             {{ _("Email") }}
@@ -42,7 +36,7 @@
 
     @if (!$tier)
         <p>{{ _("You are not yet enrolled.") }}</p>
-        <a href="{{ action("PaymentController@welcome") }}">
+        <a class="btn btn-primary" href="{{ action("PaymentController@welcome") }}">
             {{ _("Register now!") }}
         </a>
     @endif
