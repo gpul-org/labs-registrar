@@ -21,12 +21,13 @@ class Tier {
         $this->price = $price;
     }
 
-    public function isFree() {
-        return $this->price == "FREE";
+    public static function fromArray($arr)
+    {
+        return new self($arr['name'], $arr['advantages'], array_get($arr, 'requirements', array()), $arr['price']);
     }
 
-    public static function fromArray($arr) {
-        return new self($arr['name'], $arr['advantages'], array_get($arr, 'requirements', array()), $arr['price']);
+    public function isFree() {
+        return $this->price == "FREE";
     }
 
 }
@@ -82,6 +83,10 @@ class TierDescriptor
         return array_get($this->tiers, $tier, NULL)->price;
     }
 
+    /**
+     * @param $tier
+     * @return Tier
+     */
     public function getTier($tier)
     {
         return array_get($this->tiers, $tier);

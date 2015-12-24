@@ -7,9 +7,14 @@ use Registration\Transaction;
 
 class TransactionRepository
 {
-    public function saveOrUpdateTransaction(AbstractTransaction $transaction)
+
+    /**
+     * @param AbstractTransaction $transaction
+     * @return Transaction
+     */
+    public static function saveOrUpdateTransaction(AbstractTransaction $transaction)
     {
-        Transaction::updateOrCreate([
+        return Transaction::updateOrCreate([
             "status" => $transaction->getStatus(),
             "txid" => $transaction->getTxId(),
             "provider" => $transaction->getPaymentMethod()->getName(),
@@ -20,12 +25,20 @@ class TransactionRepository
         ]);
     }
 
-    public function getUserTransactions(Authenticatable $user)
+    /**
+     * @param Authenticatable $user
+     * @return Transaction[]
+     */
+    public static function getUserTransactions(Authenticatable $user)
     {
         return Transaction::where('buyer_id', $user->getAuthIdentifier())->get();
     }
 
-    public function getUserTier(Authenticatable $user)
+    /**
+     * @param Authenticatable $user
+     * @return string|null
+     */
+    public static function getUserTier(Authenticatable $user)
     {
         $tx = Transaction::where('buyer_id', $user->getAuthIdentifier())->first();
 
