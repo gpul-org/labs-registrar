@@ -6,17 +6,6 @@ use Illuminate\Support\Facades\Request;
 use Registration\Repositories\TransactionRepository;
 use Registration\TierDescriptor;
 
-class PaypalTransaction extends AbstractTransaction {
-
-    /**
-     * @return PaymentMethod
-     */
-    public function getPaymentMethod()
-    {
-        return new PaypalMethod();
-    }
-}
-
 class PaypalMethod implements PaymentMethod
 {
     public static function getName()
@@ -24,7 +13,7 @@ class PaypalMethod implements PaymentMethod
         return 'paypal';
     }
 
-    public function handle($concept, $price, $invoiceNo)
+    public function handle($concept, $price)
     {
 
     }
@@ -32,8 +21,8 @@ class PaypalMethod implements PaymentMethod
     public function finalizeTransaction(TierDescriptor $tiers, TransactionRepository $transactions, TransactionResultListener $resultListener)
     {
         $txId = Request::get("tx");
-        $st = Request::get('st');
-        $amt = Request::get('amt');
+        // $st = Request::get('st');
+        // $amt = Request::get('amt');
 
         $r = $this->callPayPalAPI($this->formUrl(), [
             "cmd" => "_notify-synch",

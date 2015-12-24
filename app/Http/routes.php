@@ -60,6 +60,11 @@ Route::get('/profile/transactions', [
     'uses' => 'PaymentController@logs'
 ]);
 
+Route::post('/profile/register/handle/{merchant}', [
+    'middlware' => 'auth',
+    'uses' => 'PaymentController@merchantHandle'
+]);
+
 Route::get('/profile/register/_callback/{merchant}', [
     'middlware' => 'auth',
     'uses' => 'PaymentController@merchantCallback'
