@@ -30,6 +30,16 @@ Route::get('/profile', [
     'uses' => 'UserController@profile'
 ]);
 
+Route::get('/profile/volunteer', [
+    'middleware' => 'auth',
+    'uses' => 'VolunteerController@welcome'
+]);
+
+Route::post('/profile/volunteer/join', [
+    'middleware' => 'auth',
+    'uses' => 'VolunteerController@join'
+]);
+
 Route::get('/profile/register', [
     'middleware' => 'auth',
     'uses' => 'PaymentController@welcome'

@@ -1,17 +1,22 @@
 <?php namespace Registration\Http\Controllers;
 
 
-use Registration\Http\Controllers\Controller;
 use Registration\Repositories\TransactionRepository;
+use Registration\Repositories\VolunteerRepository;
 
 class UserController extends Controller
 {
-    public function profile(TransactionRepository $transactions) {
-        $tier = $transactions->getUserTier(\Auth::user());
+    public function profile(TransactionRepository $transactions, VolunteerRepository $volunteers)
+    {
+        $user = \Auth::user();
+
+        $tier = $transactions->getUserTier($user);
+        $volunteer_status = $volunteers->getStatus($user);
 
         return view('user_profile', [
-            'user' => \Auth::user(),
+            'user' => $user,
             'tier' => $tier,
+            'volunteer' => $volunteer_status,
         ]);
     }
 

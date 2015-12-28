@@ -23,7 +23,14 @@
             {{ $user->email }}
         </dd>
 
-
+        @if ($volunteer)
+            <dt>
+                {{ _("Volunteer status") }}
+            </dt>
+            <dd>
+                {{ $volunteer }}
+            </dd>
+        @endif
         @if ($tier)
             <dt>
                 {{ _("Subscription type") }}
@@ -31,10 +38,10 @@
             <dd>
                 {{ $tier }}
             </dd>
-            @endif
+        @endif
     </dl>
 
-    @if (!$tier)
+    @if (!$volunteer && !$tier)
         <p>{{ _("You are not yet enrolled.") }}</p>
         <a class="btn btn-primary" href="{{ action("PaymentController@welcome") }}">
             {{ _("Register now!") }}
