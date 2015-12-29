@@ -30,5 +30,6 @@ class Kernel extends HttpKernel
         'auth' => \Registration\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \Registration\Http\Middleware\RedirectIfAuthenticated::class,
+        'ghadmin' => \Registration\Http\Middleware\GitHubAdminAuth::class,
     ];
 }

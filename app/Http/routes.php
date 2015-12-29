@@ -80,34 +80,14 @@ Route::get('/profile/register/_callback/{merchant}', [
     'uses' => 'PaymentController@merchantCallback'
 ]);
 
-Route::get('/admin', [
-    'middleware' => 'auth',
-    'uses' => 'Admin\AdminController@dashboard'
-]);
+Route::group(['middleware' => 'ghadmin'], function () {
 
-Route::get('/admin/org-access', [
-    'middleware' => 'auth',
-    'uses' => 'Admin\AdminController@orgRequests'
-]);
+    Route::get('/admin', 'Admin\AdminController@dashboard');
+    Route::get('/admin/org-access', 'Admin\AdminController@orgRequests');
+    Route::get('/admin/org-access/volunteers', 'Admin\AdminController@volunteerRequests');
+    Route::post('/admin/org-access', 'Admin\AdminController@orgPost');
+    Route::get('/admin/members', 'Admin\AdminController@listMembers');
+    Route::get('/admin/transactions', 'Admin\AdminController@listTransactions');
 
-Route::get('/admin/org-access/volunteers', [
-    'middleware' => 'auth',
-    'uses' => 'Admin\AdminController@volunteerRequests'
-]);
-
-Route::post('/admin/org-access', [
-    'middleware' => 'auth',
-    'uses' => 'Admin\AdminController@orgPost'
-]);
-
-Route::get('/admin/members', [
-    'middleware' => 'auth',
-    'uses' => 'Admin\AdminController@listMembers'
-]);
-
-Route::get('/admin/transactions', [
-    'middleware' => 'auth',
-    'uses' => 'Admin\AdminController@listTransactions'
-]);
-
+});
 
