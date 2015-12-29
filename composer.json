@@ -11,7 +11,8 @@
         "barryvdh/laravel-ide-helper": "v2.1.2",
         "doctrine/dbal": "^2.5",
         "twbs/bootstrap": "^3.3",
-        "xinax/laravel-gettext": "3.x"
+        "xinax/laravel-gettext": "3.x",
+        "ext-gettext": "*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
