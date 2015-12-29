@@ -52,7 +52,17 @@
         @endif
         @yield('content')
     </div>
+
+    <div class="footer">
+        Empregamos cookies de sesión para a entrada do usuario. Opcionalmente empregamos Piwik para manter unha
+        analítica da web, pero podes evitar ser incluído no tratamento activando a opción
+        <a href="https://en.wikipedia.org/wiki/Do_Not_Track" rel="nofollow">Do-Not-Track</a> do teu navegador.
+        Creemos que esta é unha solución técnicamente posible e eficaz con arreglo á lei, xa que
+        esta cookie pode ser denegada directamente polo usuario.
+    </div>
 </div>
+
+@include('piwik')
 
 <script src="{{ asset('bootstrap/dist/js/bootstrap.min.js') }}"></script>
 </body>
