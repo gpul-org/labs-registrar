@@ -18,7 +18,6 @@
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav">
                     @section('navbar.left')
-                        <li><p class="navbar-text">This is the master sidebar</p></li>
                     @show
                 </ul>
 

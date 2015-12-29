@@ -38,14 +38,9 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">GPUL Labs.</div>
                 <nav>
-                    @if(Auth::user())
-                        You are logged in. <a href="{{ action("AuthController@logout") }}">Logout</a>
-                        You are {{ Auth::user()  }}
-                    @else
-                    <a href="{{ action("AuthController@login") }}">Login with GitHub</a>
-                    @endif
+                    <a href="{{ action("VolunteerController@welcome") }}" class="btn btn-primary">Rexístrate como voluntario aquí!</a>
                 </nav>
             </div>
         </div>
