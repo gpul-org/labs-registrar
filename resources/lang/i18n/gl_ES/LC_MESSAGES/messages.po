@@ -1,0 +1,300 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GPUL Labs Registration page\n"
+"POT-Creation-Date: 2015-12-29 04:31+0100\n"
+"PO-Revision-Date: 2015-12-29 04:31+0100\n"
+"Last-Translator: Santiago Saavedra <ssaavedra@gpul.org>\n"
+"Language-Team: Santiago Saavedra <ssaavedra@gpul.org>\n"
+"Language: gl_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.5\n"
+"X-Poedit-KeywordsList: _\n"
+"X-Poedit-Basepath: ../../../../../app\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: Http/Controllers\n"
+"X-Poedit-SearchPath-1: ../resources/views\n"
+"X-Poedit-SearchPath-2: Console/Commands\n"
+"X-Poedit-SearchPath-3: ../storage/framework/messages\n"
+
+#: ../storage/framework/messages/1d756f8760b13ca7d5648a5d9c4a1100.php:22
+#: Http/Controllers/VolunteerController.php:22
+msgid ""
+"You were already on the queue for joining. You will find an invite from "
+"GitHub in your inbox."
+msgstr ""
+"Xa estabas na cola para unirte. Atoparás unha invitación de GitHub na "
+"túa bandexa de entrada."
+
+#: ../storage/framework/messages/1d756f8760b13ca7d5648a5d9c4a1100.php:25
+#: Http/Controllers/VolunteerController.php:25
+msgid ""
+"Now you are already on the queue for joining. You will find an invite from "
+"GitHub in your inbox."
+msgstr ""
+"Agora xa estás na cola para unirte. Atoparás unha invitación de GitHub "
+"na túa bandexa de entrada."
+
+#: ../storage/framework/messages/38042902acab93a85f900f3756f454df.php:1
+#: ../storage/framework/messages/38042902acab93a85f900f3756f454df.php:4
+msgid "Payment confirmed"
+msgstr "Pagamento confirmado"
+
+#: ../storage/framework/messages/38042902acab93a85f900f3756f454df.php:7
+#, php-format
+msgid "You are now subscribed to the <strong>%s</strong> tier"
+msgstr "Agora estás subscrito ao pack <strong>%s</strong>"
+
+#: ../storage/framework/messages/38042902acab93a85f900f3756f454df.php:12
+#, php-format
+msgid "You have just paid %1s € to get the %2s tier (transaction id: %3s)"
+msgstr "Acabas de pagar %1s € para obter o paquete %2s (id de transacción: %3s)"
+
+#: ../storage/framework/messages/38042902acab93a85f900f3756f454df.php:16
+msgid "Return to your profile"
+msgstr "Volver ao teu perfil"
+
+#: ../storage/framework/messages/3a04f634ff3be96874cf179277019b3e.php:29
+#, php-format
+msgid "Hello, %s"
+msgstr "Ola, %s"
+
+#: ../storage/framework/messages/3a04f634ff3be96874cf179277019b3e.php:33
+msgid "My Profile"
+msgstr "O meu perfil"
+
+#: ../storage/framework/messages/3a04f634ff3be96874cf179277019b3e.php:34
+msgid "Logout"
+msgstr "Pechar sesión"
+
+#: ../storage/framework/messages/3a04f634ff3be96874cf179277019b3e.php:38
+msgid "Login"
+msgstr "Iniciar sesión"
+
+#: ../storage/framework/messages/43aced077311ecf929f0a3d56fadc554.php:80
+#: Http/Controllers/Admin/AdminController.php:80
+#, php-format
+msgid "Invited %1s successfully (current state: %2s)"
+msgstr "Invitouse a %1s satisfactoriamente (estado actual: %2s)"
+
+#: ../storage/framework/messages/6978f37ab3c59580aee3c77e10eb826c.php:1
+msgid "Payment log"
+msgstr "Rexistro de pagamentos"
+
+#: ../storage/framework/messages/6978f37ab3c59580aee3c77e10eb826c.php:7
+msgid "Transaction id"
+msgstr "Id de transacción"
+
+#: ../storage/framework/messages/6978f37ab3c59580aee3c77e10eb826c.php:8
+msgid "Amount"
+msgstr "Cantidade"
+
+#: ../storage/framework/messages/6978f37ab3c59580aee3c77e10eb826c.php:9
+msgid "Concept"
+msgstr "Concepto"
+
+#: ../storage/framework/messages/6978f37ab3c59580aee3c77e10eb826c.php:10
+msgid "Status"
+msgstr "Estado"
+
+#: ../storage/framework/messages/6978f37ab3c59580aee3c77e10eb826c.php:11
+msgid "Payment provider"
+msgstr "Proveedor do pagamento"
+
+#: ../storage/framework/messages/6f94961279c6e1705f4c8263f204e3eb.php:1
+#: ../storage/framework/messages/80ae68a98d1c64b51499c2d3cc9c7eff.php:1
+msgid "Admin dashboard"
+msgstr "Dashboard de administración"
+
+#: ../storage/framework/messages/6f94961279c6e1705f4c8263f204e3eb.php:20
+#, php-format
+msgid "Attend requests for users (%d pending)"
+msgstr "Atender peticións de usuarios (hai %d)"
+
+#: ../storage/framework/messages/6f94961279c6e1705f4c8263f204e3eb.php:22
+#, php-format
+msgid "Attend requests for volunteers (%d pending)"
+msgstr "Atender peticións de voluntarios (hai %d)"
+
+#: ../storage/framework/messages/80ae68a98d1c64b51499c2d3cc9c7eff.php:27
+msgid "Approve"
+msgstr "Aprobar"
+
+#: ../storage/framework/messages/80ae68a98d1c64b51499c2d3cc9c7eff.php:37
+msgid "Deny"
+msgstr "Denegar"
+
+#: ../storage/framework/messages/a4a1cd351ea37ea15324cb12cd0e101c.php:1
+msgid "Select payment method"
+msgstr "Seleccionar método de pagamento"
+
+#: ../storage/framework/messages/a4a1cd351ea37ea15324cb12cd0e101c.php:7
+msgid "Pay online with PayPal"
+msgstr "Pagar online con PayPal"
+
+#: ../storage/framework/messages/a4a1cd351ea37ea15324cb12cd0e101c.php:8
+msgid ""
+"You will be able to review the details of your transaction when you click "
+"the button."
+msgstr ""
+"Poderás revisar os detalles da transacción cando fagas click no botón."
+
+#: ../storage/framework/messages/a4a1cd351ea37ea15324cb12cd0e101c.php:28
+msgid "Pay by bank transfer"
+msgstr "Pagar por transferencia bancaria"
+
+#: ../storage/framework/messages/a4a1cd351ea37ea15324cb12cd0e101c.php:29
+msgid "Issue a wire transfer to:"
+msgstr "Envía unha transferencia bancaria a:"
+
+#: ../storage/framework/messages/a4a1cd351ea37ea15324cb12cd0e101c.php:31
+msgid "IBAN"
+msgstr ""
+
+#: ../storage/framework/messages/a4a1cd351ea37ea15324cb12cd0e101c.php:33
+msgid "Acct. Holder"
+msgstr "Titular da conta"
+
+#: ../storage/framework/messages/a4a1cd351ea37ea15324cb12cd0e101c.php:35
+msgid "Bank branch"
+msgstr "Banco"
+
+#: ../storage/framework/messages/a4a1cd351ea37ea15324cb12cd0e101c.php:37
+msgid "BIC Code"
+msgstr "Código BIC"
+
+#: ../storage/framework/messages/a4a1cd351ea37ea15324cb12cd0e101c.php:40
+msgid "Please note the details before clicking the button."
+msgstr "Por favor, toma nota dos detalles antes de pulsar o botón."
+
+#: ../storage/framework/messages/a4a1cd351ea37ea15324cb12cd0e101c.php:45
+msgid "I will pay you a bank transfer."
+msgstr "Pagarei por transferencia bancaria."
+
+#: ../storage/framework/messages/a85e94ad9277a2b6f9cd6dc4630c464c.php:1
+msgid "Register now"
+msgstr "Rexistrarse agora"
+
+#: ../storage/framework/messages/a85e94ad9277a2b6f9cd6dc4630c464c.php:28
+#, php-format
+msgid "Register now for %s"
+msgstr "Rexístrate agora como %s"
+
+#: ../storage/framework/messages/ca8959e4486f83f49bbe51b503e6a25e.php:1
+msgid "Confirm tier selection"
+msgstr "Confima a selección do plan"
+
+#: ../storage/framework/messages/ca8959e4486f83f49bbe51b503e6a25e.php:5
+msgid "Please confirm your choice"
+msgstr "Por favor confirma a túa escolla"
+
+#: ../storage/framework/messages/ca8959e4486f83f49bbe51b503e6a25e.php:8
+msgid "You will have access to the following advantages: "
+msgstr "Terás acceso ás seguintes vantaxes"
+
+#: ../storage/framework/messages/ca8959e4486f83f49bbe51b503e6a25e.php:22
+msgid "Register"
+msgstr "Rexistrar"
+
+#: ../storage/framework/messages/ca8959e4486f83f49bbe51b503e6a25e.php:28
+msgid "Select payment playform"
+msgstr "Seleccionar método de pagamento"
+
+#: ../storage/framework/messages/ca8959e4486f83f49bbe51b503e6a25e.php:33
+msgid "Select another tier"
+msgstr "Seleccionar outro plan"
+
+#: ../storage/framework/messages/e6db11d2336bcd18ab246713fcc7e091.php:1
+msgid "Payment failure"
+msgstr "Fallo no pagamento"
+
+#: ../storage/framework/messages/e6db11d2336bcd18ab246713fcc7e091.php:5
+msgid "Your payment could not be confirmed."
+msgstr "O teu pagamento non puido confirmarse"
+
+#: ../storage/framework/messages/eb0df436d302bf0e23beb019c9d1f1f8.php:7
+msgid "User"
+msgstr "Usuario"
+
+#: ../storage/framework/messages/eb0df436d302bf0e23beb019c9d1f1f8.php:14
+msgid "Full name"
+msgstr "Nome completo"
+
+#: ../storage/framework/messages/eb0df436d302bf0e23beb019c9d1f1f8.php:22
+msgid "Email"
+msgstr ""
+
+#: ../storage/framework/messages/eb0df436d302bf0e23beb019c9d1f1f8.php:32
+msgid "Volunteer status"
+msgstr "Estado de voluntario"
+
+#: ../storage/framework/messages/eb0df436d302bf0e23beb019c9d1f1f8.php:42
+msgid "Subscription type"
+msgstr "Tipo de subscripción"
+
+#: ../storage/framework/messages/eb0df436d302bf0e23beb019c9d1f1f8.php:53
+msgid "You are not yet enrolled."
+msgstr "Aínda non estás inscrito"
+
+#: ../storage/framework/messages/eb0df436d302bf0e23beb019c9d1f1f8.php:55
+msgid "Register now!"
+msgstr "Inscríbete agora!"
+
+#: ../storage/framework/messages/ed01fdca2c782581af13d8524b55e8ea.php:1
+msgid "Sign up as a volunteer!"
+msgstr "Date de alta como voluntario!"
+
+#: ../storage/framework/messages/ed01fdca2c782581af13d8524b55e8ea.php:3
+msgid "Sign up as a volunteer"
+msgstr "Alta como voluntario"
+
+#: ../storage/framework/messages/ed01fdca2c782581af13d8524b55e8ea.php:5
+msgid "Join our volunteer forces!"
+msgstr "Únete aos nosos voluntarios!"
+
+#: ../storage/framework/messages/ed01fdca2c782581af13d8524b55e8ea.php:6
+msgid "You will be in charge of talks, or special commitments."
+msgstr "Estarás ao cargo de charlas ou outros asuntos de interese."
+
+#: ../storage/framework/messages/ed01fdca2c782581af13d8524b55e8ea.php:7
+msgid "Volunteers' perks"
+msgstr "Vantaxes de ser voluntario"
+
+#: ../storage/framework/messages/ed01fdca2c782581af13d8524b55e8ea.php:11
+msgid "GPUL merchandise pack for swag"
+msgstr "Merchandising de GPUL para ir á moda"
+
+#: ../storage/framework/messages/ed01fdca2c782581af13d8524b55e8ea.php:12
+msgid "A lot of learning, good for the resumé"
+msgstr "Aprenderás un montón, que ademais queda ben no currículo"
+
+#: ../storage/framework/messages/ed01fdca2c782581af13d8524b55e8ea.php:13
+msgid "Get in touch with shining people, maybe you'd want to begin a startup?"
+msgstr "Estarás en contacto con xente chachi, queres comezar a túa propia startup?"
+
+#: ../storage/framework/messages/ed01fdca2c782581af13d8524b55e8ea.php:14
+msgid "People of cool companies will come here"
+msgstr "E xente de compañías enrolladas virán a falarnos como se fan as cousas"
+
+#: ../storage/framework/messages/ed01fdca2c782581af13d8524b55e8ea.php:22
+msgid "Request to sign up"
+msgstr "Pide que te incluamos"
+
+#: ../storage/framework/messages/ed01fdca2c782581af13d8524b55e8ea.php:25
+#, php-format
+msgid ""
+"This form will try to issue an automatic membership request and confirmation "
+"to the %s organization. If no org admins have logged in recently, your "
+"request will be queued, and you will find the invite in your inbox later."
+msgstr ""
+"Este formulario tentará enviar unha solicitude automática de membresía e "
+"confirmación á organización %s. Se non hai admins da organización que iniciaran "
+"sesión recentemente aquí, a túa solicitude quedará á espera, e atoparás a invitación "
+"na túa bandexa de entrada."
+
+#: ../storage/framework/messages/f65cc1c5e52799900ac395dcd8691faa.php:27
+#: Http/Controllers/PaymentController.php:27
+#, php-format
+msgid "You have already registered for the <strong>%s</strong> tier."
+msgstr "Xa te rexistraches no plan <strong>%s</strong>."
