@@ -59,12 +59,14 @@ class AuthenticateUser
         return $callback->userHasLoggedIn($user);
     }
 
-    private function getAuthorization()
+    public function getAuthorization()
     {
         /** @var GithubProvider $gitHubProvider */
         $gitHubProvider = $this->socialite->driver('github');
 
-        return $gitHubProvider->scopes(['user:email', 'read:org'])->redirect();
+        $scopes = \Session::get('github.scopes', ['user:email', 'read:org']);
+
+        return $gitHubProvider->scopes($scopes)->redirect();
     }
 
     private function getGitHubUser()

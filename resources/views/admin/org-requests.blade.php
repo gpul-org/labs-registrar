@@ -23,6 +23,7 @@
                         <form action="{{ action('Admin\\AdminController@orgPost') }}" method="post">
                             <input type="hidden" name="user" value="{{ $user->getAuthIdentifier() }}" />
                             <input type="hidden" name="username" value="{{ $user->username }}" />
+                            <input type="hidden" name="team" value="{{ $team }}">
                             <input type="hidden" name="action" value="approve" />
                             <input type="submit" class="btn btn-primary" value="{{ _("Approve") }}"/>
                             {{ csrf_field() }}

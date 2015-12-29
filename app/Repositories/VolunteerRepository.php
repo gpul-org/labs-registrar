@@ -2,6 +2,7 @@
 
 
 use Illuminate\Contracts\Auth\Authenticatable;
+use Registration\User;
 use Registration\Volunteer;
 
 class VolunteerRepository
@@ -51,5 +52,44 @@ class VolunteerRepository
             'pending' => true,
             'accepted' => false,
         ]);
+    }
+
+    /**
+     * Get the Users who are in a pending status (and not already invited).
+     *
+     * @return \Generator
+     */
+    public function getPending()
+    {
+        foreach (Volunteer::query()->where('pending', true)->where('accepted', false)->get() as $v) {
+            yield $v->user;
+        }
+    }
+
+    /**
+     * @param $username
+     * @return bool
+     */
+    public function setAccepted($username)
+    {
+        $uid = User::query()->where('username', $username)->first(['id'])->id;
+        $volunteer = Volunteer::query()->where('user_id', $uid)->firstOrFail();
+        $volunteer->accepted = true;
+
+        return $volunteer->save();
+    }
+
+
+    /**
+     * @param $username
+     * @return bool
+     */
+    public function setDenied($username)
+    {
+        $uid = User::query()->where('username', $username)->first(['id'])->id;
+        $volunteer = Volunteer::query()->where('user_id', $uid)->firstOrFail();
+        $volunteer->pending = false;
+
+        return $volunteer->save();
     }
 }

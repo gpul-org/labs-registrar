@@ -90,6 +90,11 @@ Route::get('/admin/org-access', [
     'uses' => 'Admin\AdminController@orgRequests'
 ]);
 
+Route::get('/admin/org-access/volunteers', [
+    'middleware' => 'auth',
+    'uses' => 'Admin\AdminController@volunteerRequests'
+]);
+
 Route::post('/admin/org-access', [
     'middleware' => 'auth',
     'uses' => 'Admin\AdminController@orgPost'
