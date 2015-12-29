@@ -1,5 +1,27 @@
 <?php
 
+$dbconn = env('DB_CONNECTION', 'mysql');
+
+$mysql = [
+    'host' => 'localhost',
+    'database' => env('DB_DATABASE', 'forge'),
+    'username' => env('DB_USERNAME', 'forge'),
+    'password' => env('DB_PASSWORD', ''),
+    'prefix' => env('DB_PREFIX', ''),
+];
+
+if(env('CLEARDB_DATABASE_URL', false)) {
+    // We are inside Heroku
+    $dbconn = 'mysql';
+    $url = parse_url(env('CLEARDB_DATABASE_URL'));
+
+    $mysql['host'] = $url['host'];
+    $mysql['username'] = $url['user'];
+    $mysql['password'] = $url['pass'];
+    $mysql['database'] = substr($url['path'], 1);
+}
+
+
 return [
 
     /*
@@ -26,7 +48,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => $dbconn,
 
     /*
     |--------------------------------------------------------------------------
@@ -54,13 +76,13 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'forge'),
-            'username'  => env('DB_USERNAME', 'forge'),
-            'password'  => env('DB_PASSWORD', ''),
+            'host'      => $mysql['host'],
+            'database'  => $mysql['database'],
+            'username'  => $mysql['username'],
+            'password'  => $mysql['password'],
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
+            'prefix'    => $mysql['prefix'],
             'strict'    => false,
         ],
 
