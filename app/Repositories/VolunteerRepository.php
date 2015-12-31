@@ -55,11 +55,19 @@ class VolunteerRepository
     }
 
     /**
+     * @return array
+     */
+    public function getPending()
+    {
+        iterator_to_array($this->_getPending());
+    }
+
+    /**
      * Get the Users who are in a pending status (and not already invited).
      *
      * @return \Generator
      */
-    public function getPending()
+    public function _getPending()
     {
         foreach (Volunteer::query()->where('pending', true)->where('accepted', false)->get() as $v) {
             yield $v->user;

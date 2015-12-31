@@ -5,19 +5,19 @@ use Guzzle\Http\Client;
 use Guzzle\Http\Exception\ClientErrorResponseException;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Session;
 use Psy\Util\Json;
 use Registration\Repositories\VolunteerRepository;
+use Session;
 use function Registration\add_heading_msg;
 
 class AdminController extends Controller
 {
     public function dashboard(VolunteerRepository $volunteerRepository)
     {
-        if (!\Session::get('github.scopes'))
+        if (!Session::get('github.scopes'))
             return $this->raisePrivileges();
 
-        $pendingVolunteers = (array)$volunteerRepository->getPending();
+        $pendingVolunteers = $volunteerRepository->getPending();
 
         return view('admin.dashboard', [
             'pendingTransactions' => 0,
@@ -30,7 +30,7 @@ class AdminController extends Controller
 
     public function raisePrivileges()
     {
-        \Session::put('github.scopes', ['user:email', 'admin:org']);
+        Session::put('github.scopes', ['user:email', 'admin:org']);
         return redirect(action('AuthController@login'));
     }
 
@@ -56,7 +56,6 @@ class AdminController extends Controller
     {
         $username = $request->input('username');
         $team = $request->input('team');
-        $orgName = "gpul-labs";
 
         $client = new Client();
         $token = Session::get('github.user')->token;
@@ -72,6 +71,7 @@ class AdminController extends Controller
             $r = $response->json();
         } catch (ClientErrorResponseException $e) {
             dd($e);
+            throw $e;
         }
 
         $volunteers->setAccepted($username);
